@@ -3,140 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sécurité Connectée - MaisonConnecté Lens/Harnes</title>
+    <title>Sécurité Connectée - MaisonConnecté</title>
     <style>
         :root { --blue: #2c3e50; --navy: #34495e; --green: #27ae60; --orange: #e67e22; --light: #f4f7f6; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; background: #fff; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; margin: 0; background: #fff; }
         
         /* HEADER HARMONISÉ */
-        header { background: var(--blue); color: white; padding: 2rem; text-align: center; }
+        header { background: var(--blue); color: white; padding: 2.5rem 1rem; text-align: center; }
         header h1 { margin: 0; font-size: 2.5rem; }
-        .slogan-geo { margin: 10px 0 0 0; font-size: 1.1rem; font-weight: 300; }
-        .slogan-abo { margin: 5px 0 0 0; font-size: 0.9rem; color: var(--green); font-weight: bold; }
+        .slogan { margin: 10px 0 0 0; font-size: 1.1rem; opacity: 0.9; }
 
-        /* NAVIGATION */
-        nav { background: var(--navy); padding: 12px; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        /* NAVIGATION HARMONISÉE */
+        nav { background: var(--navy); padding: 12px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
         nav a:hover { color: var(--green); }
 
-        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
         
-        /* GRILLE DES PACKS SÉCURITÉ */
-        .packs-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px; }
+        .packs-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px; }
         .pack-card { 
             background: white; border: 1px solid #ddd; border-radius: 12px; 
-            width: 260px; padding: 25px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            width: 280px; padding: 25px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
-        .pack-featured { border: 2px solid var(--orange); background: #fffaf9; transform: scale(1.05); }
-        .pack-name { font-size: 1.2rem; font-weight: bold; color: var(--blue); margin-bottom: 10px; }
-        .pack-price { font-size: 2.2rem; font-weight: bold; color: var(--orange); margin: 15px 0; }
-        .pack-details { list-style: none; padding: 0; font-size: 0.85rem; text-align: left; min-height: 120px; }
-        .pack-details li { margin-bottom: 8px; padding-left: 20px; position: relative; }
-        .pack-details li::before { content: "•"; position: absolute; left: 0; color: var(--orange); font-weight: bold; }
-
-        /* SECTION TECHNIQUE ET EXPLICATIONS */
-        .info-section { background: var(--light); padding: 40px 20px; border-radius: 15px; margin-top: 50px; }
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
-        .feature-item { background: white; padding: 20px; border-radius: 10px; border-top: 4px solid var(--orange); }
+        .price { font-size: 2rem; font-weight: bold; color: var(--orange); margin: 15px 0; }
         
-        .btn-cta { display: inline-block; background: var(--orange); color: white; padding: 18px 35px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 30px; font-size: 1.1rem; }
-        footer { text-align: center; padding: 3rem; background: var(--blue); color: white; margin-top: 60px; }
+        .btn-cta { 
+            display: inline-block; background: var(--green); color: white; 
+            padding: 15px 25px; text-decoration: none; border-radius: 5px; 
+            font-weight: bold; margin-top: 30px; transition: 0.3s;
+        }
+        .btn-cta:hover { transform: scale(1.05); }
+
+        .info-box { background: var(--light); padding: 25px; border-radius: 12px; margin-top: 40px; border-left: 5px solid var(--orange); }
+        footer { text-align: center; padding: 2rem; background: #eee; margin-top: 40px; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>MaisonConnecté</h1>
-    <p class="slogan-geo">Votre sécurité à <strong>Harnes, Lens et Pont-à-Vendin</strong></p>
-    <p class="slogan-abo">Vigilance & Dissuasion Sans Abonnement</p>
+    <p class="slogan">Expert Domotique à <strong>Harnes, Lens et environs</strong></p>
 </header>
 
 <nav>
     <a href="index.html">Accueil</a>
-    <a href="domotique.html">Packs Volets</a>
+    <a href="domotique.html">Volets</a>
     <a href="securite.html">Sécurité</a>
-    <a href="contact.html">Contact & Devis</a>
+    <a href="configuration.html">Devis</a>
 </nav>
 
 <div class="container">
-    <div style="text-align: center; margin-bottom: 30px;">
-        <h2>Sécurisez vos accès simplement</h2>
-        <p>Soyez alerté instantanément sur votre smartphone en cas d'ouverture de porte ou fenêtre.</p>
+    <div style="text-align: center;">
+        <h2>Sécurité Sans Abonnement</h2>
+        <p>Gardez l'esprit tranquille. Soyez alerté instantanément sur votre smartphone.</p>
     </div>
 
     <div class="packs-grid">
         <div class="pack-card">
-            <div class="pack-name">PACK VISION</div>
-            <p>Visualisation distance</p>
-            <div class="pack-price">99 €</div>
-            <ul class="pack-details">
-                <li>1 Caméra WiFi HD</li>
-                <li>Visualisation direct App</li>
-                <li>Enregistrement sur détection</li>
-                <li>Pose & Configuration</li>
-            </ul>
+            <h3>PACK VISION</h3>
+            <p>1 Caméra HD WiFi</p>
+            <div class="price">99 €</div>
+            <p>Visualisation en direct et enregistrement sur détection.</p>
         </div>
 
-        <div class="pack-card pack-featured">
-            <div style="background: var(--orange); color: white; font-size: 0.7rem; padding: 3px; border-radius: 5px; margin-bottom: 10px; font-weight: bold;">CONSEILLÉ</div>
-            <div class="pack-name">DISSUASION</div>
-            <p>Alerte Ouverture</p>
-            <div class="pack-price">199 €</div>
-            <ul class="pack-details">
-                <li><strong>1 Passerelle (Hub) incluse</strong></li>
-                <li>1 Sirène intérieure</li>
-                <li>3 Capteurs d'ouverture (Portes)</li>
-                <li>Notifications Smartphone</li>
-            </ul>
-        </div>
-
-        <div class="pack-card">
-            <div class="pack-name">SÉRÉNITÉ +</div>
-            <p>Vision & Dissuasion</p>
-            <div class="pack-price">289 €</div>
-            <ul class="pack-details">
-                <li>Pack Dissuasion complet</li>
-                <li>+ 1 Caméra WiFi HD</li>
-                <li>Couplage Volets possible</li>
-                <li>Aide à la prise en main</li>
-            </ul>
+        <div class="pack-card" style="border: 2px solid var(--orange);">
+            <h3>DISSUASION</h3>
+            <p>3 Capteurs + Sirène</p>
+            <div class="price">199 €</div>
+            <p>Inclut la passerelle intelligente (Hub) pour une fiabilité totale.</p>
         </div>
     </div>
 
-    <section class="info-section">
-        <h2 style="text-align:center;">Une technologie fiable au service de votre sérénité</h2>
-        <div class="feature-grid">
-            <div class="feature-item">
-                <strong>📡 La Passerelle Intelligente (Hub)</strong><br>
-                C'est le cerveau de votre sécurité. Elle gère vos capteurs via une fréquence stable qui ne sature pas votre WiFi et assure une grande autonomie aux piles des capteurs.
-            </div>
-            <div class="feature-item">
-                <strong>🚪 Capteurs de contact (Portes)</strong><br>
-                Nous privilégions les capteurs d'ouverture sur les points d'entrée. C'est la solution la plus fiable pour éviter les fausses alertes tout en étant prévenu avant même qu'un intrus ne soit à l'intérieur.
-            </div>
-            <div class="feature-item">
-                <strong>👁️ Caméras de Visualisation</strong><br>
-                Gardez un œil sur votre foyer à tout moment. En cas de notification, ouvrez l'application et vérifiez en direct ce qu'il se passe chez vous, où que vous soyez.
-            </div>
-        </div>
+    <div class="info-box">
+        <h4>🔍 Pourquoi choisir nos solutions ?</h4>
+        <p>Contrairement aux alarmes classiques, vous ne payez aucun abonnement mensuel. Le matériel vous appartient et les alertes arrivent directement sur votre téléphone.</p>
+    </div>
 
-        <div style="margin-top: 40px; padding: 20px; background: white; border-radius: 10px; text-align: center; border: 1px dashed var(--orange);">
-            <p style="margin: 0; font-weight: bold;">💡 Le couplage gagnant :</p>
-            <p style="margin: 5px 0 0 0;">Si vous possédez nos volets connectés, nous pouvons programmer leur fermeture automatique dès que la sirène se déclenche.</p>
-        </div>
-    </section>
-
-    <div style="text-align: center; margin-top: 40px;">
-        <h3>Le matériel vous appartient, sans aucun frais caché.</h3>
-        <p>Économisez les mensualités des sociétés de télésurveillance (env. 500€/an).</p>
-        <a href="contact.html" class="btn-cta">DEMANDER UNE ÉTUDE SÉCURITÉ</a>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="configuration.html" class="btn-cta">SIMULER MON INSTALLATION</a>
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 MaisonConnecté - Installation locale à Lens, Harnes et environs.</p>
-    <p style="font-size: 0.8rem; opacity: 0.8;">Solution basée sur l'écosystème Smart Life / Tuya.</p>
+    <p>&copy; 2026 MaisonConnecté - Installation locale 62</p>
 </footer>
 
 </body>
