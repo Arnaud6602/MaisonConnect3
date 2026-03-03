@@ -3,156 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurateur de Devis - MaisonConnecté</title>
+    <title>Devis Express - MaisonConnecté 📝</title>
     <style>
-        :root { --blue: #2c3e50; --navy: #34495e; --green: #27ae60; --orange: #e67e22; --light: #f4f7f6; }
+        :root { --blue: #2c3e50; --navy: #34495e; --green: #27ae60; --light: #f4f7f6; }
         body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; margin: 0; background: #fff; }
-        header { background: var(--blue); color: white; padding: 2rem; text-align: center; }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        .slogan-geo { margin: 10px 0 0 0; font-size: 1.1rem; font-weight: 300; }
         
-        nav { background: var(--navy); padding: 12px; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        /* HEADER HARMONISÉ (STRICTEMENT IDENTIQUE SUR TOUTES LES PAGES) */
+        header { background: var(--blue); color: white; padding: 2.5rem 1rem; text-align: center; box-sizing: border-box; min-height: 160px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+        header h1 { margin: 0; font-size: 2.5rem; line-height: 1.1; }
+        .slogan { margin: 10px 0 0 0; font-size: 1.1rem; opacity: 0.9; line-height: 1.4; }
 
-        .container { max-width: 800px; margin: auto; padding: 20px; }
+        /* NAVIGATION HARMONISÉE */
+        nav { background: var(--navy); padding: 12px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        nav a { color: white; margin: 0 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        nav a:hover { color: var(--green); }
+
+        .container { max-width: 600px; margin: auto; padding: 20px; box-sizing: border-box; }
         
-        .calculator-card { 
+        .card { 
             background: white; border: 2px solid var(--blue); border-radius: 15px; 
-            padding: 30px; margin-top: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            padding: 25px; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .input-group { margin-bottom: 20px; }
-        .input-group label { display: block; font-weight: bold; margin-bottom: 8px; color: var(--blue); }
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-weight: bold; margin-bottom: 5px; color: var(--blue); }
         .input-group input { 
             width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; box-sizing: border-box;
         }
 
         .result-box { 
-            background: var(--light); padding: 20px; border-radius: 10px; 
-            text-align: center; margin: 30px 0; border: 2px dashed var(--green);
+            background: #e8f5e9; padding: 15px; border-radius: 10px; 
+            text-align: center; margin: 20px 0; border: 2px solid var(--green);
         }
-        .final-price-display { font-size: 2.5rem; font-weight: bold; color: var(--green); margin: 10px 0; }
+        .price { font-size: 2.2rem; font-weight: bold; color: var(--green); }
         
         .btn-submit { 
             display: block; width: 100%; background: var(--green); color: white; 
-            padding: 18px; border: none; border-radius: 8px; font-size: 1.2rem; 
-            font-weight: bold; cursor: pointer; text-align: center; transition: 0.3s;
+            padding: 15px; border: none; border-radius: 8px; font-size: 1.2rem; 
+            font-weight: bold; cursor: pointer;
         }
-        .btn-submit:hover { background: #219150; transform: translateY(-2px); }
-
-        .form-section-title { border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; color: var(--blue); margin-top: 30px;}
+        footer { text-align: center; padding: 2rem; background: #eee; margin-top: 40px; font-size: 0.8rem; color: #666; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>MaisonConnecté</h1>
-    <p class="slogan-geo">Simulateur de Devis - <strong>Harnes & Lens</strong></p>
+    <h1>✨ MaisonConnecté</h1>
+    <p class="slogan">Expert Domotique à <strong>📍 Harnes, Lens et environs</strong></p>
 </header>
 
 <nav>
-    <a href="index.html">Accueil</a>
-    <a href="domotique.html">Packs Volets</a>
-    <a href="securite.html">Sécurité</a>
-    <a href="configuration.html">Configurateur</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html">🏠 Accueil</a>
+    <a href="domotique.html">🚪 Volets</a>
+    <a href="securite.html">🛡️ Sécurité</a>
+    <a href="configuration.html">📝 Devis</a>
 </nav>
 
 <div class="container">
     <div style="text-align: center;">
-        <h2>Configurez votre projet</h2>
-        <p>Estimez le montant de votre installation et recevez votre devis par e-mail.</p>
+        <h2>📊 Votre Devis Express</h2>
+        <p>Ajustez les quantités et recevez votre estimation par mail. ⏱️</p>
     </div>
 
-    <form action="https://formspree.io/f/maqdrndz" method="POST" class="calculator-card">
-        
-        <h3 class="form-section-title">1. Vos besoins</h3>
+    <form action="https://formspree.io/f/maqdrndz" method="POST" class="card">
         
         <div class="input-group">
-            <label>Nombre de Volets (Interrupteurs Wi-Fi) :</label>
-            <input type="number" name="Nombre_de_Volets" id="volets" min="0" value="0" oninput="calculate()">
+            <label>🦾 Nombre de Volets :</label>
+            <input type="number" name="Volets" id="v" value="0" min="0" oninput="calc()">
         </div>
 
         <div class="input-group">
-            <label>Capteurs d'ouverture (Portes/Fenêtres) :</label>
-            <input type="number" name="Nombre_de_Capteurs" id="capteurs" min="0" value="0" oninput="calculate()">
+            <label>🚪 Capteurs d'ouverture :</label>
+            <input type="number" name="Capteurs" id="c" value="0" min="0" oninput="calc()">
         </div>
 
         <div class="input-group">
-            <label>Caméras de Visualisation :</label>
-            <input type="number" name="Nombre_de_Cameras" id="cameras" min="0" value="0" oninput="calculate()">
+            <label>📹 Caméras :</label>
+            <input type="number" name="Cameras" id="cam" value="0" min="0" oninput="calc()">
         </div>
 
         <div class="result-box">
-            <div>Estimation totale (Matériel + Pose) :</div>
-            <div id="display-price" class="final-price-display">0 €</div>
-            <input type="hidden" name="Estimation_Prix_Total" id="hidden-price" value="0 €">
-            <input type="hidden" name="Type_de_Pack" id="hidden-pack" value="DÉCOUVERTE">
+            <span>Estimation totale (Pose incluse) :</span>
+            <div id="p-text" class="price">0 €</div>
+            <input type="hidden" name="Total_Estime" id="h-price" value="0 €">
         </div>
 
-        <h3 class="form-section-title">2. Vos coordonnées</h3>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
 
         <div class="input-group">
-            <label>Votre Nom complet :</label>
-            <input type="text" name="Nom_Client" required placeholder="Jean Dupont">
-        </div>
-
-        <div class="input-group">
-            <label>Votre adresse E-mail :</label>
-            <input type="email" name="Email_Client" required placeholder="exemple@mail.com">
+            <label>👤 Votre Nom complet :</label>
+            <input type="text" name="Nom" required>
         </div>
 
         <div class="input-group">
-            <label>Téléphone :</label>
-            <input type="tel" name="Telephone_Client" placeholder="06 00 00 00 00">
+            <label>📞 Téléphone :</label>
+            <input type="tel" name="Telephone" required>
         </div>
 
         <div class="input-group">
-            <label>Ville de l'installation :</label>
-            <input type="text" name="Ville_Installation" required placeholder="Ex: Harnes, Lens, Pont-à-Vendin...">
+            <label>📍 Ville :</label>
+            <input type="text" name="Ville" required placeholder="Harnes, Lens...">
         </div>
 
-        <button type="submit" class="btn-submit">ENVOYER MA DEMANDE DE DEVIS</button>
-        
-        <p style="text-align: center; font-size: 0.8rem; color: #888; margin-top: 15px;">
-            En envoyant ce formulaire, vous recevrez un récapitulatif. Je vous recontacterai sous 24h pour valider les détails techniques.
-        </p>
+        <button type="submit" class="btn-submit">📩 ENVOYER MA DEMANDE</button>
     </form>
 </div>
 
 <script>
-function calculate() {
-    let v = parseInt(document.getElementById('volets').value) || 0;
-    let c = parseInt(document.getElementById('capteurs').value) || 0;
-    let cam = parseInt(document.getElementById('cameras').value) || 0;
+function calc() {
+    let volets = parseInt(document.getElementById('v').value) || 0;
+    let capt = parseInt(document.getElementById('c').value) || 0;
+    let cameras = parseInt(document.getElementById('cam').value) || 0;
     
     let total = 0;
-    
-    // Volets : 89€ le premier, 79€ les suivants
-    if (v > 0) { total += 89 + (v - 1) * 79; }
+    if (volets > 0) total += 89 + (volets - 1) * 79;
+    if (capt > 0) total += 50 + (capt * 35);
+    if (cameras > 0) total += cameras * 79;
 
-    // Sécurité : 50€ Hub (obligatoire si capteur) + 35€ par capteur
-    if (c > 0) { total += 50 + (c * 35); }
-    
-    // Caméras : 79€ l'unité posée
-    if (cam > 0) { total += cam * 79; }
-
-    // Mise à jour visuelle
-    document.getElementById('display-price').innerText = total + " €";
-    
-    // Mise à jour des données du formulaire pour Formspree
-    document.getElementById('hidden-price').value = total + " €";
-    
-    let packName = "DÉCOUVERTE";
-    if (v >= 8) packName = "PRESTIGE";
-    else if (v >= 5) packName = "SÉRÉNITÉ";
-    else if (v >= 3) packName = "CONFORT+";
-    
-    document.getElementById('hidden-pack').value = packName;
+    document.getElementById('p-text').innerText = total + " €";
+    document.getElementById('h-price').value = total + " €";
 }
 </script>
 
 <footer>
-    <p>&copy; 2026 MaisonConnecté - Expert Domotique & Sécurité Sans Abonnement</p>
+    <p>&copy; 2026 MaisonConnecté - Devis Gratuit 🛠️</p>
 </footer>
 
 </body>
