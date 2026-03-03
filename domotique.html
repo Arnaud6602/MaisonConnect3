@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Packs Volets - MaisonConnecté</title>
+    <title>Packs Volets - MaisonConnecté 🚪</title>
     <style>
-        :root { --blue: #2c3e50; --navy: #34495e; --green: #27ae60; --orange: #e67e22; --light: #f4f7f6; }
+        :root { --blue: #2c3e50; --navy: #34495e; --green: #27ae60; --light: #f4f7f6; }
         body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; margin: 0; background: #fff; }
         
-        header { background: var(--blue); color: white; padding: 2rem; text-align: center; }
-        nav { background: var(--navy); padding: 12px; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        /* HEADER HARMONISÉ (STRICTEMENT IDENTIQUE SUR TOUTES LES PAGES) */
+        header { background: var(--blue); color: white; padding: 2.5rem 1rem; text-align: center; box-sizing: border-box; min-height: 160px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+        header h1 { margin: 0; font-size: 2.5rem; line-height: 1.1; }
+        .slogan { margin: 10px 0 0 0; font-size: 1.1rem; opacity: 0.9; line-height: 1.4; }
 
-        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        /* NAVIGATION HARMONISÉE */
+        nav { background: var(--navy); padding: 12px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        nav a { color: white; margin: 0 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        nav a:hover { color: var(--green); }
+
+        .container { max-width: 1000px; margin: auto; padding: 20px; box-sizing: border-box; }
         
         .packs-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px; }
         .pack-card { 
@@ -27,59 +33,59 @@
             padding: 15px 25px; text-decoration: none; border-radius: 5px; 
             font-weight: bold; margin-top: 30px; 
         }
-        footer { text-align: center; padding: 2rem; background: var(--blue); color: white; margin-top: 40px; }
+        footer { text-align: center; padding: 2rem; background: #eee; margin-top: 40px; font-size: 0.8rem; color: #666; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>MaisonConnecté</h1>
-    <p>Motorisation & Centralisation Volets</p>
+    <h1>✨ MaisonConnecté</h1>
+    <p class="slogan">Expert Domotique à <strong>📍 Harnes, Lens et environs</strong></p>
 </header>
 
 <nav>
-    <a href="index.html">Accueil</a>
-    <a href="domotique.html">Volets</a>
-    <a href="securite.html">Sécurité</a>
-    <a href="configuration.html">Devis</a>
+    <a href="index.html">🏠 Accueil</a>
+    <a href="domotique.html">🚪 Volets</a>
+    <a href="securite.html">🛡️ Sécurité</a>
+    <a href="configuration.html">📝 Devis</a>
 </nav>
 
 <div class="container">
     <div style="text-align: center;">
-        <h2>Nos Packs Volets Roulants</h2>
-        <p>Installation incluse sur Lens et Harnes. Matériel garanti.</p>
+        <h2>🦾 Nos Packs Volets Roulants</h2>
+        <p>Installation incluse sur Lens et Harnes. Matériel garanti. 🛠️</p>
     </div>
 
     <div class="packs-grid">
         <div class="pack-card">
-            <h3>DÉCOUVERTE</h3>
+            <h3>DÉCOUVERTE 🌟</h3>
             <p>1 Volet</p>
-            <div class="price">89 €</div>
-            <p>Idéal pour tester la domotique dans une pièce.</p>
+            <div class="price">💰 89 €</div>
+            <p>Idéal pour tester la domotique dans une pièce. 📺</p>
         </div>
 
         <div class="pack-card pack-featured">
-            <h3>SÉRÉNITÉ</h3>
+            <h3>SÉRÉNITÉ 🏡</h3>
             <p>5 Volets</p>
-            <div class="price">405 €</div>
-            <p>Le pack complet pour toute la maison.</p>
+            <div class="price">💰 405 €</div>
+            <p>Le pack complet pour toute la maison. 😎</p>
         </div>
 
         <div class="pack-card">
-            <h3>PRESTIGE</h3>
+            <h3>PRESTIGE 🏰</h3>
             <p>8 Volets</p>
-            <div class="price">642 €</div>
-            <p>Centralisation totale de vos ouvertures.</p>
+            <div class="price">💰 642 €</div>
+            <p>Centralisation totale de vos ouvertures. 🕹️</p>
         </div>
     </div>
 
     <div style="text-align: center; margin-top: 40px;">
-        <a href="configuration.html" class="btn-cta">CALCULER MON DEVIS PERSONNALISÉ</a>
+        <a href="configuration.html" class="btn-cta">📊 CALCULER MON DEVIS PERSO</a>
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 MaisonConnecté - Harnes</p>
+    <p>&copy; 2026 MaisonConnecté - Harnes 🛠️</p>
 </footer>
 
 </body>
