@@ -3,130 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devis Express - MaisonConnecté 📝</title>
+    <title>MaisonConnecté - Devis en ligne</title>
     <style>
-        :root { --blue: #2c3e50; --navy: #34495e; --green: #27ae60; --light: #f4f7f6; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; margin: 0; background: #fff; }
+        :root { 
+            --blue: #2c3e50; 
+            --navy: #34495e; 
+            --green: #27ae60; 
+            --light: #f4f7f6; 
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            margin: 0; 
+            background: #fff; 
+        }
         
-        /* HEADER HARMONISÉ (STRICTEMENT IDENTIQUE SUR TOUTES LES PAGES) */
-        header { background: var(--blue); color: white; padding: 2.5rem 1rem; text-align: center; box-sizing: border-box; min-height: 160px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
-        header h1 { margin: 0; font-size: 2.5rem; line-height: 1.1; }
-        .slogan { margin: 10px 0 0 0; font-size: 1.1rem; opacity: 0.9; line-height: 1.4; }
+        /* HEADER HARMONISÉ (STRICTEMENT IDENTIQUE) */
+        header { 
+            background: var(--blue); 
+            color: white; 
+            padding: 2.5rem 1rem; 
+            text-align: center; 
+            box-sizing: border-box; 
+            min-height: 160px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;
+        }
+        header h1 { margin: 0; font-size: 2.2rem; letter-spacing: 1px; }
+        .slogan { margin: 10px 0 0 0; font-size: 1.1rem; opacity: 0.9; font-weight: 300; }
 
         /* NAVIGATION HARMONISÉE */
-        nav { background: var(--navy); padding: 12px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        nav a { color: white; margin: 0 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; white-space: nowrap; }
+        nav { 
+            background: var(--navy); 
+            padding: 12px; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        }
+        nav a { 
+            color: white; 
+            margin: 0 10px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 0.9rem; 
+            text-transform: uppercase; 
+        }
         nav a:hover { color: var(--green); }
 
-        .container { max-width: 600px; margin: auto; padding: 20px; box-sizing: border-box; }
-        
-        .card { 
-            background: white; border: 2px solid var(--blue); border-radius: 15px; 
-            padding: 25px; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .input-group { margin-bottom: 15px; }
-        .input-group label { display: block; font-weight: bold; margin-bottom: 5px; color: var(--blue); }
-        .input-group input { 
-            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; box-sizing: border-box;
+        .container { 
+            max-width: 800px; 
+            margin: auto; 
+            padding: 20px; 
+            box-sizing: border-box; 
         }
 
-        .result-box { 
-            background: #e8f5e9; padding: 15px; border-radius: 10px; 
-            text-align: center; margin: 20px 0; border: 2px solid var(--green);
+        /* FORMULAIRE PRO */
+        .config-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 20px;
         }
-        .price { font-size: 2.2rem; font-weight: bold; color: var(--green); }
-        
-        .btn-submit { 
-            display: block; width: 100%; background: var(--green); color: white; 
-            padding: 15px; border: none; border-radius: 8px; font-size: 1.2rem; 
-            font-weight: bold; cursor: pointer;
+
+        .section-title {
+            color: var(--blue);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 10px;
         }
-        footer { text-align: center; padding: 2rem; background: #eee; margin-top: 40px; font-size: 0.8rem; color: #666; }
+
+        .input-group { margin-bottom: 20px; }
+        .input-group label { 
+            display: block; 
+            font-weight: bold; 
+            margin-bottom: 8px; 
+            color: var(--navy);
+        }
+        .input-group input { 
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid #ddd; 
+            border-radius: 4px; 
+            font-size: 1rem; 
+            box-sizing: border-box;
+        }
+
+        /* ESTIMATION PRIX */
+        .price-box {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px 0;
+            border: 2px dashed var(--green);
+        }
+        .price-label { font-size: 1rem; color: #666; }
+        .price-value { font-size: 2.5rem; font-weight: bold; color: var(--green); }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            background: var(--green);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .btn-submit:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        footer { 
+            text-align: center; 
+            padding: 2rem; 
+            background: #f9f9f9; 
+            margin-top: 40px; 
+            font-size: 0.85rem; 
+            color: #7f8c8d;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>✨ MaisonConnecté</h1>
-    <p class="slogan">Expert Domotique à <strong>📍 Harnes, Lens et environs</strong></p>
+    <h1>🏠 MAISON CONNECTÉE</h1>
+    <p class="slogan">Solutions de Domotique Résidentielle • <strong>📍 Bassin Minier</strong></p>
 </header>
 
 <nav>
-    <a href="index.html">🏠 Accueil</a>
-    <a href="domotique.html">🚪 Volets</a>
-    <a href="securite.html">🛡️ Sécurité</a>
-    <a href="configuration.html">📝 Devis</a>
+    <a href="index.html">Accueil</a>
+    <a href="domotique.html">Volets</a>
+    <a href="securite.html">Sécurité</a>
+    <a href="configuration.html">Devis en ligne</a>
 </nav>
 
 <div class="container">
-    <div style="text-align: center;">
-        <h2>📊 Votre Devis Express</h2>
-        <p>Ajustez les quantités et recevez votre estimation par mail. ⏱️</p>
+    <div style="text-align: center; margin-bottom: 30px;">
+        <h2>📊 Simulateur de Devis</h2>
+        <p>Estimez votre projet en quelques clics et recevez votre proposition détaillée.</p>
     </div>
 
-    <form action="https://formspree.io/f/maqdrndz" method="POST" class="card">
+    <!-- Formulaire lié à ton ID Formspree -->
+    <form action="https://formspree.io/f/maqdrndz" method="POST" class="config-card">
+        
+        <h3 class="section-title">🛠️ Votre Configuration</h3>
         
         <div class="input-group">
-            <label>🦾 Nombre de Volets :</label>
-            <input type="number" name="Volets" id="v" value="0" min="0" oninput="calc()">
+            <label>Nombre de volets roulants à connecter :</label>
+            <input type="number" name="Nombre_Volets" id="v_qty" value="0" min="0" oninput="calculate()">
         </div>
 
         <div class="input-group">
-            <label>🚪 Capteurs d'ouverture :</label>
-            <input type="number" name="Capteurs" id="c" value="0" min="0" oninput="calc()">
+            <label>Nombre de capteurs d'ouverture (Portes/Fenêtres) :</label>
+            <input type="number" name="Nombre_Capteurs" id="s_qty" value="0" min="0" oninput="calculate()">
         </div>
 
         <div class="input-group">
-            <label>📹 Caméras :</label>
-            <input type="number" name="Cameras" id="cam" value="0" min="0" oninput="calc()">
+            <label>Nombre de caméras de surveillance :</label>
+            <input type="number" name="Nombre_Cameras" id="c_qty" value="0" min="0" oninput="calculate()">
         </div>
 
-        <div class="result-box">
-            <span>Estimation totale (Pose incluse) :</span>
-            <div id="p-text" class="price">0 €</div>
-            <input type="hidden" name="Total_Estime" id="h-price" value="0 €">
+        <div class="price-box">
+            <div class="price-label">Estimation Totale (Matériel + Pose)</div>
+            <div id="total-display" class="price-value">0 €</div>
+            <input type="hidden" name="Prix_Estime" id="hidden_total" value="0 €">
         </div>
 
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+        <h3 class="section-title">👤 Vos Coordonnées</h3>
 
         <div class="input-group">
-            <label>👤 Votre Nom complet :</label>
+            <label>Nom et Prénom :</label>
             <input type="text" name="Nom" required>
         </div>
 
         <div class="input-group">
-            <label>📞 Téléphone :</label>
+            <label>Téléphone :</label>
             <input type="tel" name="Telephone" required>
         </div>
 
         <div class="input-group">
-            <label>📍 Ville :</label>
-            <input type="text" name="Ville" required placeholder="Harnes, Lens...">
+            <label>Ville de l'installation :</label>
+            <input type="text" name="Ville" required placeholder="Harnes, Lens, etc.">
         </div>
 
-        <button type="submit" class="btn-submit">📩 ENVOYER MA DEMANDE</button>
+        <div class="input-group">
+            <label>Email :</label>
+            <input type="email" name="Email" required>
+        </div>
+
+        <button type="submit" class="btn-submit">Envoyer ma demande ✅</button>
+
     </form>
 </div>
 
 <script>
-function calc() {
-    let volets = parseInt(document.getElementById('v').value) || 0;
-    let capt = parseInt(document.getElementById('c').value) || 0;
-    let cameras = parseInt(document.getElementById('cam').value) || 0;
-    
-    let total = 0;
-    if (volets > 0) total += 89 + (volets - 1) * 79;
-    if (capt > 0) total += 50 + (capt * 35);
-    if (cameras > 0) total += cameras * 79;
+    function calculate() {
+        let volets = parseInt(document.getElementById('v_qty').value) || 0;
+        let capteurs = parseInt(document.getElementById('s_qty').value) || 0;
+        let cameras = parseInt(document.getElementById('c_qty').value) || 0;
+        
+        let total = 0;
+        
+        // Logique : 89€ le premier volet, 79€ les suivants
+        if (volets > 0) {
+            total += 89 + (volets - 1) * 79;
+        }
+        
+        // Logique Sécurité : Hub à 50€ + 35€ par capteur
+        if (capteurs > 0) {
+            total += 50 + (capteurs * 35);
+        }
+        
+        // Logique Caméras : 79€ l'unité
+        if (cameras > 0) {
+            total += cameras * 79;
+        }
 
-    document.getElementById('p-text').innerText = total + " €";
-    document.getElementById('h-price').value = total + " €";
-}
+        document.getElementById('total-display').innerText = total + " €";
+        document.getElementById('hidden_total').value = total + " €";
+    }
 </script>
 
 <footer>
-    <p>&copy; 2026 MaisonConnecté - Devis Gratuit 🛠️</p>
+    <p>© 2026 MaisonConnecté - Expertise locale : Harnes, Lens, Pont-à-Vendin 🛠️</p>
 </footer>
 
 </body>
 </html>
+
+
