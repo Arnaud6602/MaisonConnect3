@@ -20,7 +20,7 @@
             background: #fff; 
         }
         
-        /* HEADER HARMONISÉ (STRICTEMENT IDENTIQUE AUX AUTRES PAGES) */
+        /* HEADER HARMONISÉ (IDENTIQUE AUX AUTRES PAGES) */
         header { 
             background: var(--blue); 
             color: white; 
@@ -145,6 +145,7 @@
             header h1 { font-size: 1.8rem; }
             .price-value { font-size: 2.2rem; }
             nav a { margin: 0 5px; font-size: 0.8rem; }
+            .config-card { padding: 15px; }
         }
     </style>
 </head>
@@ -168,6 +169,7 @@
         <p>Estimez votre projet en 1 minute et recevez une proposition détaillée par e-mail.</p>
     </div>
 
+    <!-- Formulaire lié à ton ID Formspree -->
     <form action="https://formspree.io/f/maqdrndz" method="POST" class="config-card">
         
         <h3 class="section-title">🛠️ Votre Configuration</h3>
@@ -178,7 +180,7 @@
         </div>
 
         <div class="input-group">
-            <label>Nombre de capteurs d'ouverture (Portes et Fenêtres) :</label>
+            <label>Nombre de capteurs d'ouverture (Portes/Fenêtres) :</label>
             <input type="number" name="Nombre_Capteurs" id="s_qty" value="0" min="0" oninput="calculate()">
         </div>
 
@@ -190,7 +192,7 @@
         <div class="price-box">
             <div class="price-label">Estimation Totale (Matériel + Pose)</div>
             <div id="total-display" class="price-value">0 €</div>
-            <p style="font-size: 0.85rem; color: #888; margin-top: 10px;">Inclus : Installation, configuration et formation.</p>
+            <p style="font-size: 0.85rem; color: #888; margin-top: 10px;">Inclus : Installation, configuration et formation 🛠️</p>
             <input type="hidden" name="Prix_Estime_Total" id="hidden_total" value="0 €">
         </div>
 
@@ -218,6 +220,10 @@
 
         <button type="submit" class="btn-submit">Recevoir mon devis gratuit ✅</button>
         
+        <p style="text-align: center; font-size: 0.8rem; color: #999; margin-top: 15px;">
+            Réponse garantie sous 24h.
+        </p>
+
     </form>
 </div>
 
@@ -228,8 +234,11 @@
         let cameras = parseInt(document.getElementById('c_qty').value) || 0;
         
         let total = 0;
+        // 89€ le premier volet, 79€ les suivants
         if (volets > 0) total += 89 + (volets - 1) * 79;
+        // Hub 50€ + 35€ par capteur
         if (capteurs > 0) total += 50 + (capteurs * 35);
+        // 79€ par caméra
         if (cameras > 0) total += cameras * 79;
 
         document.getElementById('total-display').innerText = total + " €";
@@ -238,10 +247,9 @@
 </script>
 
 <footer>
-    <p>© 2026 MaisonConnecté - Installation de proximité dans le Bassin Minier 🛠️</p>
+    <p>&copy; 2026 MaisonConnecté - Installation de proximité dans le Bassin Minier 🏠<br>Harnes, Lens, Pont-à-Vendin, Vendin-le-Vieil.</p>
 </footer>
 
 </body>
 </html>
-
 
