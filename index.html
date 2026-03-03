@@ -3,106 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaisonConnecté - Domotique sans abonnement Lens/Harnes</title>
-    <link rel="stylesheet" href="style.css"> <!-- Assure-toi que le nom du fichier CSS est correct -->
+    <title>MaisonConnecté - Domotique & Sécurité à Lens / Harnes</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
-        header { background: #2c3e50; color: white; padding: 2rem; text-align: center; }
-        nav { background: #34495e; padding: 10px; text-align: center; }
+        :root { --blue: #2c3e50; --navy: #34495e; --green: #27ae60; --light: #f4f7f6; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; margin: 0; background: #fff; }
+        
+        header { background: var(--blue); color: white; padding: 3rem 1rem; text-align: center; }
+        header h1 { margin: 0; font-size: 2.8rem; }
+        .slogan-geo { margin: 10px 0 0 0; font-size: 1.2rem; font-weight: 300; }
+        .slogan-abo { margin: 10px 0 0 0; font-size: 1rem; color: var(--green); font-weight: bold; text-transform: uppercase; }
+
+        nav { background: var(--navy); padding: 12px; text-align: center; position: sticky; top: 0; z-index: 1000; }
         nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .hero { padding: 40px 20px; text-align: center; background: #f4f7f6; }
-        .highlight { color: #27ae60; font-weight: bold; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        .services { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-around; margin-top: 30px; }
-        .card { background: white; border: 1px solid #ddd; padding: 20px; width: 300px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .btn { display: inline-block; background: #27ae60; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
-        th { background: #f8f9fa; }
-        .check { color: #27ae60; font-weight: bold; }
+        nav a:hover { color: var(--green); }
+
+        .hero { background: var(--light); padding: 50px 20px; text-align: center; }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+
+        .services-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px; }
+        .service-card { 
+            background: white; border: 1px solid #ddd; border-radius: 15px; 
+            width: 300px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--green); }
+        .service-card h3 { color: var(--blue); }
+        
+        .btn { display: inline-block; background: var(--green); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; }
+        
+        .promo-banner { background: var(--blue); color: white; padding: 40px 20px; text-align: center; margin-top: 50px; border-radius: 15px; }
+        footer { text-align: center; padding: 3rem; background: var(--navy); color: white; margin-top: 60px; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>MaisonConnecté</h1>
-    <p>Votre expert domotique de proximité à <strong>Harnes, Lens et Pont-à-Vendin</strong></p>
+    <p class="slogan-geo">Installation domotique pro à <strong>Harnes, Lens et environs</strong></p>
+    <p class="slogan-abo">Vraie Domotique • Zéro Abonnement • 100% Propriétaire</p>
 </header>
 
 <nav>
     <a href="index.html">Accueil</a>
-    <a href="volets.html">Volets Connectés</a>
+    <a href="domotique.html">Packs Volets</a>
     <a href="securite.html">Sécurité</a>
-    <a href="contact.html">Contact / Devis</a>
+    <a href="configuration.html">Configurateur</a>
 </nav>
 
 <section class="hero">
-    <h2>La technologie au service de votre confort et sécurité</h2>
-    <p style="font-size: 1.2rem; max-width: 800px; margin: auto;">
-        Marre des mensualités infinies ? Je transforme votre habitat avec des solutions intelligentes, fiables et <span class="highlight">100% sans abonnement</span>. Déjà plus de 25 installations réussies dans le Bassin Minier !
-    </p>
-    <a href="contact.html" class="btn">Demander mon devis gratuit</a>
+    <div class="container">
+        <h2>Reprenez le contrôle de votre maison</h2>
+        <p>Expert en motorisation de volets et sécurité connectée. Je simplifie votre quotidien avec des solutions fiables, sans frais mensuels cachés.</p>
+    </div>
 </section>
 
 <div class="container">
-    <div class="services">
-        <div class="card">
-            <h3>🏠 Volets Connectés</h3>
-            <p>Installation d'interrupteurs tactiles intelligents. Contrôlez vos volets par smartphone ou à la voix.</p>
-            <p class="highlight">À partir de 89€ (Pose + Matériel inclus)</p>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Volets Connectés</h3>
+            <p>Pilotez vos volets roulants depuis votre smartphone ou à la voix. Scénarios solaires inclus.</p>
+            <p><strong>À partir de 89€</strong></p>
+            <a href="domotique.html" class="btn">Voir les Packs</a>
         </div>
-        <div class="card">
-            <h3>🛡️ Sécurité Totale</h3>
-            <p>Caméras HD et capteurs d'ouverture. Recevez des alertes en temps réel sans payer de service de télésurveillance.</p>
+
+        <div class="service-card">
+            <h3>Sécurité Sans Frais</h3>
+            <p>Notifications en direct sur mobile en cas d'intrusion. Sirène et caméras sans aucun abonnement.</p>
+            <p><strong>À partir de 99€</strong></p>
+            <a href="securite.html" class="btn">Découvrir</a>
         </div>
-        <div class="card">
-            <h3>🤖 Automatisations</h3>
-            <p>Simulation de présence, fermeture automatique au coucher du soleil... Le confort total sur une seule application.</p>
+
+        <div class="service-card">
+            <h3>Devis Instantané</h3>
+            <p>Utilisez notre configurateur pour obtenir une estimation précise en fonction de vos besoins.</p>
+            <p><strong>Gratuit & Rapide</strong></p>
+            <a href="configuration.html" class="btn">Calculer mon prix</a>
         </div>
     </div>
 
-    <hr style="margin: 50px 0; border: 0; border-top: 1px solid #eee;">
-
-    <h2 style="text-align: center;">Pourquoi payer un abonnement ?</h2>
-    <p style="text-align: center;">Comparez ma solution aux géants du marché :</p>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Avantages</th>
-                <th style="color: #27ae60;">MaisonConnecté</th>
-                <th>Alarme Classique / Somfy</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Coût Mensuel</strong></td>
-                <td class="check">0€ / mois</td>
-                <td>45€ à 60€ / mois</td>
-            </tr>
-            <tr>
-                <td><strong>Prix par volet</strong></td>
-                <td class="check">89€ (Matériel inclus)</td>
-                <td>250€ à 500€</td>
-            </tr>
-            <tr>
-                <td><strong>Propriété</strong></td>
-                <td class="check">Matériel à vous</td>
-                <td>Souvent en location</td>
-            </tr>
-            <tr>
-                <td><strong>Application unique</strong></td>
-                <td class="check">OUI (Tuya/Smart Life)</td>
-                <td>Souvent limité / fermé</td>
-            </tr>
-        </tbody>
-    </table>
-    <p style="text-align: center; font-weight: bold; margin-top: 15px;">📊 Économisez plus de 3 000 € sur 5 ans.</p>
+    <div class="promo-banner">
+        <h2>Pourquoi choisir MaisonConnecté ?</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 20px;">
+            <div>✅ <strong>Local :</strong> Intervention rapide sur le secteur Lens-Harnes.</div>
+            <div>✅ <strong>Économique :</strong> Pas de contrat de télésurveillance inutile.</div>
+            <div>✅ <strong>Pro :</strong> Matériel garanti et configuration clé en main.</div>
+        </div>
+    </div>
 </div>
 
-<footer style="text-align: center; padding: 40px; background: #2c3e50; color: white; margin-top: 50px;">
-    <p>&copy; 2026 MaisonConnecté - Intervention sur Lens, Harnes, Sallaumines, Avion et environs.</p>
-    <p>Solutions basées sur l'écosystème Smart Life / Tuya</p>
+<footer>
+    <p>&copy; 2026 MaisonConnecté - Arnaud - Votre artisan local dans le 62.</p>
+    <p style="font-size: 0.8rem; opacity: 0.7;">Harnes, Lens, Pont-à-Vendin, Vendin-le-Vieil, Estevelles.</p>
 </footer>
 
 </body>
