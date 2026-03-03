@@ -3,160 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Packs Volets Connectés - MaisonConnecté Lens/Harnes</title>
+    <title>Packs Volets - MaisonConnecté</title>
     <style>
-        :root { --blue: #2c3e50; --navy: #34495e; --green: #27ae60; --light: #f4f7f6; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; background: #fff; }
+        :root { --blue: #2c3e50; --navy: #34495e; --green: #27ae60; --orange: #e67e22; --light: #f4f7f6; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; margin: 0; background: #fff; }
         
-        /* HEADER HARMONISÉ */
         header { background: var(--blue); color: white; padding: 2rem; text-align: center; }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        .slogan-geo { margin: 10px 0 0 0; font-size: 1.1rem; font-weight: 300; }
-        .slogan-abo { margin: 5px 0 0 0; font-size: 0.9rem; color: var(--green); font-weight: bold; }
-
-        /* NAVIGATION */
         nav { background: var(--navy); padding: 12px; text-align: center; position: sticky; top: 0; z-index: 1000; }
         nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        nav a:hover { color: var(--green); }
 
         .container { max-width: 1100px; margin: auto; padding: 20px; }
         
-        /* GRILLE DES PACKS */
-        .packs-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px; }
+        .packs-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px; }
         .pack-card { 
             background: white; border: 1px solid #ddd; border-radius: 12px; 
-            width: 240px; padding: 25px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            width: 280px; padding: 25px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
-        .pack-featured { border: 2px solid var(--green); background: #f9fffb; transform: scale(1.05); }
-        .pack-name { font-size: 1.2rem; font-weight: bold; color: var(--blue); margin-bottom: 10px; }
-        .pack-price { font-size: 2.2rem; font-weight: bold; color: var(--green); margin: 15px 0; }
-        .pack-details { list-style: none; padding: 0; font-size: 0.85rem; text-align: left; min-height: 120px; }
-        .pack-details li { margin-bottom: 8px; padding-left: 20px; position: relative; }
-        .pack-details li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: bold; }
-
-        /* SECTION TECHNIQUE */
-        .tech-box { background: var(--light); padding: 40px 20px; border-radius: 15px; margin-top: 50px; }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
-        .feature-item { background: white; padding: 20px; border-radius: 10px; border-top: 4px solid var(--green); }
+        .pack-featured { border: 2px solid var(--green); transform: scale(1.05); }
+        .price { font-size: 2rem; font-weight: bold; color: var(--green); margin: 15px 0; }
         
-        /* COULEURS MATÉRIEL */
-        .color-selector { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
-        .color-swatch { text-align: center; font-size: 0.8rem; }
-        .circle { width: 35px; height: 35px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 5px rgba(0,0,0,0.2); margin-bottom: 5px; }
-
-        .btn-cta { display: inline-block; background: var(--green); color: white; padding: 18px 35px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 30px; font-size: 1.1rem; }
-        footer { text-align: center; padding: 3rem; background: var(--blue); color: white; margin-top: 60px; }
+        .btn-cta { 
+            display: inline-block; background: var(--green); color: white; 
+            padding: 15px 25px; text-decoration: none; border-radius: 5px; 
+            font-weight: bold; margin-top: 30px; 
+        }
+        footer { text-align: center; padding: 2rem; background: var(--blue); color: white; margin-top: 40px; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>MaisonConnecté</h1>
-    <p class="slogan-geo">Votre expert domotique à <strong>Harnes, Lens et Pont-à-Vendin</strong></p>
-    <p class="slogan-abo">Solutions 100% Sans Abonnement</p>
+    <p>Motorisation & Centralisation Volets</p>
 </header>
 
 <nav>
     <a href="index.html">Accueil</a>
-    <a href="domotique.html">Packs Volets</a>
+    <a href="domotique.html">Volets</a>
     <a href="securite.html">Sécurité</a>
-    <a href="contact.html">Contact & Devis</a>
+    <a href="configuration.html">Devis</a>
 </nav>
 
 <div class="container">
-    <div style="text-align: center; margin-bottom: 30px;">
-        <h2>Nos Packs Volets Connectés</h2>
-        <p>Une installation professionnelle, propre et sans travaux lourds.</p>
+    <div style="text-align: center;">
+        <h2>Nos Packs Volets Roulants</h2>
+        <p>Installation incluse sur Lens et Harnes. Matériel garanti.</p>
     </div>
 
     <div class="packs-grid">
         <div class="pack-card">
-            <div class="pack-name">DÉCOUVERTE</div>
-            <p>1 Volet seul</p>
-            <div class="pack-price">89 €</div>
-            <ul class="pack-details">
-                <li>Interrupteur au choix</li>
-                <li>Installation complète</li>
-                <li>Config. Smartphone</li>
-                <li>Garantie matériel</li>
-            </ul>
-        </div>
-
-        <div class="pack-card">
-            <div class="pack-name">CONFORT +</div>
-            <p>3 Volets (Zone Jour)</p>
-            <div class="pack-price">247 €</div>
-            <ul class="pack-details">
-                <li><strong>Centralisation incluse</strong></li>
-                <li>Commande groupée</li>
-                <li>Décalage modem (WiFi)</li>
-                <li><em>Économie : 20€</em></li>
-            </ul>
+            <h3>DÉCOUVERTE</h3>
+            <p>1 Volet</p>
+            <div class="price">89 €</div>
+            <p>Idéal pour tester la domotique dans une pièce.</p>
         </div>
 
         <div class="pack-card pack-featured">
-            <div style="background: var(--green); color: white; font-size: 0.7rem; padding: 3px; border-radius: 5px; margin-bottom: 10px; font-weight: bold;">LE PLUS DEMANDÉ</div>
-            <div class="pack-name">SÉRÉNITÉ</div>
-            <p>5 Volets (Toute la maison)</p>
-            <div class="pack-price">399 €</div>
-            <ul class="pack-details">
-                <li><strong>Programmations horaires</strong></li>
-                <li>Simulation de présence</li>
-                <li>Pilotage à distance</li>
-                <li><em>Économie : 46€</em></li>
-            </ul>
+            <h3>SÉRÉNITÉ</h3>
+            <p>5 Volets</p>
+            <div class="price">405 €</div>
+            <p>Le pack complet pour toute la maison.</p>
         </div>
 
         <div class="pack-card">
-            <div class="pack-name">PRESTIGE</div>
-            <p>8 Volets et +</p>
-            <div class="pack-price">619 €</div>
-            <ul class="pack-details">
-                <li><strong>Scénarios Solaires</strong></li>
-                <li>Automatisation Coucher/Lever</li>
-                <li>Optimisation Énergie</li>
-                <li><em>Tarif Préférentiel</em></li>
-            </ul>
+            <h3>PRESTIGE</h3>
+            <p>8 Volets</p>
+            <div class="price">642 €</div>
+            <p>Centralisation totale de vos ouvertures.</p>
         </div>
     </div>
 
-    <section class="tech-box">
-        <h2 style="text-align:center;">Pourquoi choisir ma solution ?</h2>
-        <div class="features">
-            <div class="feature-item">
-                <strong>🛡️ Protection de votre installation</strong><br>
-                Pour chaque commande groupée, j'intègre un <strong>décalage de 5 à 10 secondes</strong> par paire de volets. Cela évite de surcharger votre modem WiFi et protège vos moteurs électriques.
-            </div>
-            <div class="feature-item">
-                <strong>🌙 Intelligence Solaire</strong><br>
-                Grâce aux scénarios avancés, vos volets peuvent se fermer automatiquement au <strong>coucher du soleil</strong> (via les données météo de Lens/Harnes), idéal pour garder la chaleur l'hiver.
-            </div>
-            <div class="feature-item">
-                <strong>📱 Application Unique</strong><br>
-                Tout est pilotable via l'application **Smart Life / Tuya**. Une seule interface pour vos volets et, demain, pour votre sécurité (caméras, alarmes).
-            </div>
-        </div>
-
-        <h3 style="text-align:center; margin-top: 40px;">Un design qui s'adapte à votre intérieur</h3>
-        <p style="text-align:center;">Interrupteurs à touches physiques (vrai clic) pour une fiabilité maximale.</p>
-        <div class="color-selector">
-            <div class="color-swatch"><div class="circle" style="background: #808080;"></div>Gris</div>
-            <div class="color-swatch"><div class="circle" style="background: #fff;"></div>Blanc</div>
-            <div class="color-swatch"><div class="circle" style="background: #000;"></div>Noir</div>
-        </div>
-        <p style="text-align:center; font-size: 0.9rem; color: #666;">Option module invisible disponible (+10€) pour conserver vos boutons actuels.</p>
-    </section>
-
     <div style="text-align: center; margin-top: 40px;">
-        <a href="contact.html" class="btn-cta">DEMANDER MON DEVIS GRATUIT</a>
-        <p style="margin-top: 15px; font-size: 0.9rem;">Déplacement gratuit sur Lens, Harnes, Pont-à-Vendin et alentours.</p>
+        <a href="configuration.html" class="btn-cta">CALCULER MON DEVIS PERSONNALISÉ</a>
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 MaisonConnecté - Installation domotique sans abonnement</p>
-    <p style="font-size: 0.8rem; opacity: 0.8;">Systèmes compatibles WiFi 2.4 GHz uniquement.</p>
+    <p>&copy; 2026 MaisonConnecté - Harnes</p>
 </footer>
 
 </body>
